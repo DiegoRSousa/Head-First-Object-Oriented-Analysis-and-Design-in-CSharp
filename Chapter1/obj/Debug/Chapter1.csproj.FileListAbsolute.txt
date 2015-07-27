@@ -1,0 +1,9 @@
+C:\Git\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\bin\Debug\Chapter1.exe.config
+C:\Git\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\bin\Debug\Chapter1.exe
+C:\Git\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\bin\Debug\Chapter1.pdb
+C:\Git\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\obj\Debug\Chapter1.csprojResolveAssemblyReference.cache
+C:\Git\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\obj\Debug\Chapter1.exe
+C:\Git\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\obj\Debug\Chapter1.pdb
+C:\Git\HeadFirst\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\bin\Debug\Chapter1.exe.config
+C:\Git\HeadFirst\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\obj\Debug\Chapter1.exe
+C:\Git\HeadFirst\Head-First-Object-Oriented-Analysis-and-Design-in-CSharp\Chapter1\obj\Debug\Chapter1.pdb
