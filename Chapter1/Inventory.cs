@@ -15,8 +15,8 @@ namespace Chapter1
             guitars = new List<Guitar>();
         }
 
-        public void AddGuitar(string serialNumber, double price, string builder,
-                         string model, string type, string backWood, String topWood)
+        public void AddGuitar(string serialNumber, double price, Builder builder,
+                 string model, Type type, Wood backWood, Wood topWood)
 
         {
             var guitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
@@ -33,35 +33,31 @@ namespace Chapter1
             return null;
         }
 
-        public Guitar Search(Guitar searchGuitar)
+        public List<Guitar> Search(Guitar searchGuitar)
         {
+            var matchingGuitars = new List<Guitar>();
             foreach (Guitar guitar in guitars)
             {
                 // Ignore serial number since that's unique
                 // Ignore price since that's unique
-                var builder = searchGuitar.Builder;
-                if ((builder != null) && (!builder.Equals("")) && (!builder.Equals(guitar.Builder)))
+                if (searchGuitar.Builder != guitar.Builder)
                     continue;
-
                 var model = searchGuitar.Model;
                 if ((model != null) && (!model.Equals("")) && (!model.Equals(guitar.Model)))
                     continue;
-
-                var type = searchGuitar.Model;
-                if ((model != null) && (!model.Equals("")) && (!model.Equals(guitar.Model)))
+                
+                if (searchGuitar.Type != guitar.Type)
                     continue;
 
-                var backWood = searchGuitar.BackWood;
-                if ((backWood != null) && (!backWood.Equals("")) && (!backWood.Equals(guitar.BackWood)))
+                if (searchGuitar.BackWood != guitar.BackWood)
                     continue;
 
-                var topWood = searchGuitar.TopWood;
-                if ((topWood != null) && (!topWood.Equals("")) && (!topWood.Equals(guitar.TopWood)))
+                if (searchGuitar.TopWood != guitar.TopWood)
                     continue;
 
-                return guitar;
+                matchingGuitars.Add(guitar);
             }
-            return null;
+            return matchingGuitars;
         }
     }
 }
