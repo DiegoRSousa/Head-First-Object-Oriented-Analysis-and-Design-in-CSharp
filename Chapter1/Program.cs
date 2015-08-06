@@ -14,20 +14,24 @@ namespace Chapter1
             var inventory = new Inventory();
             InitializeInventory(inventory);
 
-            var whatErinLikes = new Guitar("", 0, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+            var whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
 
             List<Guitar> matchingGuitars = inventory.Search(whatErinLikes);
 
             if (matchingGuitars.Count != 0)
             {
                 Console.WriteLine("Erin, you might like these guitars:");
-                foreach(Guitar guitar in matchingGuitars)   
+                foreach(Guitar guitar in matchingGuitars)
+                {
+                    var spec = guitar.Spec;
                     Console.WriteLine("  We have a " +
-                      guitar.Builder + " " + guitar.Model + " " +
-                      guitar.Type + " guitar:\n     " +
-                      guitar.BackWood + " back and sides,\n     " +
-                      guitar.TopWood + " top.\n  You can have it for only $" +
+                      spec.Builder + " " + spec.Model + " " +
+                      spec.Type + " guitar:\n     " +
+                      spec.BackWood + " back and sides,\n     " +
+                      spec.TopWood + " top.\n  You can have it for only $" +
                       guitar.Price + "!\n  ----");
+                }
+                    
             }
             else
             {

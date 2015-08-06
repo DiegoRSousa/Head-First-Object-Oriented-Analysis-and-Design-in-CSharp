@@ -33,26 +33,26 @@ namespace Chapter1
             return null;
         }
 
-        public List<Guitar> Search(Guitar searchGuitar)
+        public List<Guitar> Search(GuitarSpec searchSpec)
         {
             var matchingGuitars = new List<Guitar>();
             foreach (Guitar guitar in guitars)
             {
-                // Ignore serial number since that's unique
-                // Ignore price since that's unique
-                if (searchGuitar.Builder != guitar.Builder)
+                var guitarSpec = guitar.Spec;
+
+                if (searchSpec.Builder != guitarSpec.Builder)
                     continue;
-                var model = searchGuitar.Model;
-                if ((model != null) && (!model.Equals("")) && (!model.Equals(guitar.Model)))
+                var model = searchSpec.Model;
+                if ((model != null) && (!model.Equals("")) && (!model.Equals(guitarSpec.Model)))
                     continue;
                 
-                if (searchGuitar.Type != guitar.Type)
+                if (searchSpec.Type != guitarSpec.Type)
                     continue;
 
-                if (searchGuitar.BackWood != guitar.BackWood)
+                if (searchSpec.BackWood != guitarSpec.BackWood)
                     continue;
 
-                if (searchGuitar.TopWood != guitar.TopWood)
+                if (searchSpec.TopWood != guitarSpec.TopWood)
                     continue;
 
                 matchingGuitars.Add(guitar);
