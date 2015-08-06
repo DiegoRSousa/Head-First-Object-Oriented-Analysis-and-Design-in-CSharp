@@ -15,11 +15,10 @@ namespace Chapter1
             guitars = new List<Guitar>();
         }
 
-        public void AddGuitar(string serialNumber, double price, Builder builder,
-                 string model, Type type, Wood backWood, Wood topWood)
+        public void AddGuitar(string serialNumber, double price, GuitarSpec spec)
 
         {
-            var guitar = new Guitar(serialNumber, price, builder, model, type, backWood, topWood);
+            var guitar = new Guitar(serialNumber, price, spec);
             guitars.Add(guitar);
         }
 
@@ -38,24 +37,8 @@ namespace Chapter1
             var matchingGuitars = new List<Guitar>();
             foreach (Guitar guitar in guitars)
             {
-                var guitarSpec = guitar.Spec;
-
-                if (searchSpec.Builder != guitarSpec.Builder)
-                    continue;
-                var model = searchSpec.Model;
-                if ((model != null) && (!model.Equals("")) && (!model.Equals(guitarSpec.Model)))
-                    continue;
-                
-                if (searchSpec.Type != guitarSpec.Type)
-                    continue;
-
-                if (searchSpec.BackWood != guitarSpec.BackWood)
-                    continue;
-
-                if (searchSpec.TopWood != guitarSpec.TopWood)
-                    continue;
-
-                matchingGuitars.Add(guitar);
+                if (guitar.Spec.Matches(searchSpec))
+                    matchingGuitars.Add(guitar);
             }
             return matchingGuitars;
         }
